@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr Amal Chakhar — Postdoctoral Research Fellow</title>
+    <meta name="description" content="Dr Amal Chakhar — Postdoctoral Research Fellow at the School of Earth and Environment, University of Leeds. Remote sensing, precision agriculture, and machine learning.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dr Amal Chakhar — Postdoctoral Research Fellow">
+    <meta property="og:description" content="Remote sensing and machine learning for sustainable agriculture. Postdoctoral Research Fellow at the University of Leeds.">
+    <meta property="og:url" content="https://amalchakhar.com">
+    <meta property="og:site_name" content="Dr Amal Chakhar">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Dr Amal Chakhar — Postdoctoral Research Fellow">
+    <meta name="twitter:description" content="Remote sensing and machine learning for sustainable agriculture. Postdoctoral Research Fellow at the University of Leeds.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://amalchakhar.com">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #f9f7f3;
+            --color-surface: #ffffff;
+            --color-text: #1a1a1a;
+            --color-text-secondary: #5a5347;
+            --color-accent: #1a3a2a;
+            --color-accent-warm: #b45a3c;
+            --color-accent-light: #e8efe6;
+            --color-border: #e0ddd6;
+            --color-tag-bg: #f0ece4;
+            --color-tag-hover: #e4ded4;
+            --color-card-shadow: rgba(26, 58, 42, 0.06);
+            --color-hero-lines: rgba(26, 58, 42, 0.07);
+            --color-grain: 0.03;
+            --nav-bg: rgba(249, 247, 243, 0.88);
+            --font-serif: 'Source Serif 4', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        [data-theme="dark"] {
+            --color-bg: #1a1a18;
+            --color-surface: #242422;
+            --color-text: #e8e4dc;
+            --color-text-secondary: #a09888;
+            --color-accent: #6db88a;
+            --color-accent-warm: #d4836a;
+            --color-accent-light: #2a3a2e;
+            --color-border: #333330;
+            --color-tag-bg: #2a2a27;
+            --color-tag-hover: #3a3a35;
+            --color-card-shadow: rgba(0, 0, 0, 0.2);
+            --color-hero-lines: rgba(109, 184, 138, 0.06);
+            --color-grain: 0.04;
+            --nav-bg: rgba(26, 26, 24, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        /* Grain texture overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9998;
+            pointer-events: none;
+            opacity: var(--color-grain);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--nav-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--color-border);
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
+
+        nav .nav-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .nav-name {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        nav .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent-warm);
+            border-radius: 1px;
+            transition: width 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        nav .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Dark mode toggle */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 0.4rem;
+            cursor: pointer;
+            color: var(--color-text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--color-accent-warm);
+            color: var(--color-accent-warm);
+            background: var(--color-tag-bg);
+        }
+
+        .theme-toggle svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover svg {
+            transform: rotate(15deg);
+        }
+
+        .theme-toggle .icon-moon { display: none; }
+        .theme-toggle .icon-sun { display: block; }
+
+        [data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+        [data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+
+        /* --- Hero --- */
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 9rem 2rem 5rem;
+            position: relative;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .hero-bg svg {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.6rem;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+            color: var(--color-text);
+        }
+
+        .hero h1 .name-accent {
+            color: var(--color-accent-warm);
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .hero .affiliation {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+        }
+
+        .hero .affiliation a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .hero .affiliation a:hover {
+            color: var(--color-accent-warm);
+            text-decoration: underline;
+        }
+
+        .hero .tagline {
+            margin-top: 1.5rem;
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .hero .links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero .links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .hero .links a:hover {
+            border-color: var(--color-accent-warm);
+            color: var(--color-accent-warm);
+            background: var(--color-accent-light);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px var(--color-card-shadow);
+        }
+
+        .hero .links svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* --- Scroll animations --- */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .stagger-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Sections --- */
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            transition: border-color 0.4s ease;
+        }
+
+        section + section {
+            border-top: 1px solid var(--color-border);
+        }
+
+        section h2 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        /* --- About --- */
+        .about p {
+            color: var(--color-text-secondary);
+            max-width: 650px;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Research --- */
+        .research-areas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .research-tag {
+            padding: 0.4rem 0.9rem;
+            background: var(--color-tag-bg);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .research-tag:hover {
+            background: var(--color-tag-hover);
+            transform: scale(1.04);
+            box-shadow: 0 2px 8px var(--color-card-shadow);
+            color: var(--color-text);
+        }
+
+        .project {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .project:hover {
+            box-shadow: 0 4px 16px var(--color-card-shadow);
+        }
+
+        .project h3 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .project .project-meta {
+            font-size: 0.85rem;
+            color: var(--color-accent-warm);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+
+        .project p {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* --- Publications --- */
+        .pub-list {
+            list-style: none;
+        }
+
+        .pub-item {
+            padding: 1.2rem 0 1.2rem 1rem;
+            border-bottom: 1px solid var(--color-border);
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pub-item:hover {
+            border-left-color: var(--color-accent-warm);
+            padding-left: 1.4rem;
+            background: var(--color-tag-bg);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .pub-item:last-child {
+            border-bottom: none;
+        }
+
+        .pub-title {
+            font-family: var(--font-serif);
+            font-size: 1.02rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--color-text);
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        a.pub-title:hover {
+            color: var(--color-accent-warm);
+        }
+
+        .pub-authors {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.3rem;
+        }
+
+        .pub-authors .highlight {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .pub-venue {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.2rem;
+        }
+
+        .pub-venue em {
+            font-style: italic;
+        }
+
+        .pub-year {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            background: var(--color-accent-light);
+            padding: 0.15rem 0.55rem;
+            border-radius: 4px;
+            margin-top: 0.4rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* --- Education --- */
+        .edu-list {
+            list-style: none;
+        }
+
+        .edu-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--color-border);
+            transition: border-color 0.4s ease;
+        }
+
+        .edu-item:last-child {
+            border-bottom: none;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .edu-institution {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.15rem;
+        }
+
+        .edu-year {
+            font-size: 0.8rem;
+            color: var(--color-accent-warm);
+            font-weight: 500;
+        }
+
+        /* --- Contact --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-card {
+            padding: 1.2rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--color-text);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 8px;
+            padding: 1px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-warm));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-card:hover::before {
+            opacity: 1;
+        }
+
+        .contact-card:hover {
+            box-shadow: 0 4px 16px var(--color-card-shadow);
+            transform: translateY(-2px);
+        }
+
+        .contact-card .contact-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-secondary);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-card .contact-value {
+            font-size: 0.95rem;
+            color: var(--color-accent);
+            font-weight: 500;
+        }
+
+        /* --- Footer --- */
+        footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 0.8rem;
+            transition: border-color 0.4s ease;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 7rem 1.2rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            section {
+                padding: 2rem 1.2rem;
+            }
+
+            nav .nav-inner {
+                padding: 0.8rem 1.2rem;
+            }
+
+            nav .nav-links {
+                gap: 0.8rem;
+            }
+
+            nav .nav-links a {
+                font-size: 0.78rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pub-item {
+                padding-left: 0.6rem;
+            }
+
+            .pub-item:hover {
+                padding-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="nav-name">A. Chakhar</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-bg">
+            <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <style>
+                        .topo-line { fill: none; stroke: var(--color-hero-lines); stroke-width: 1.2; }
+                        .topo-line-thin { fill: none; stroke: var(--color-hero-lines); stroke-width: 0.6; }
+                    </style>
+                </defs>
+                <!-- Topographic contour lines -->
+                <path class="topo-line" d="M-50,300 Q150,250 300,280 T600,260 T900,290 T1250,270"/>
+                <path class="topo-line-thin" d="M-50,320 Q200,270 350,300 T650,280 T950,310 T1250,290"/>
+                <path class="topo-line" d="M-50,350 Q100,310 280,330 T580,310 T880,340 T1250,320"/>
+                <path class="topo-line-thin" d="M-50,380 Q180,340 320,360 T620,340 T920,370 T1250,350"/>
+                <path class="topo-line" d="M-50,200 Q250,160 400,190 T700,170 T1000,200 T1250,180"/>
+                <path class="topo-line-thin" d="M-50,230 Q200,190 380,210 T680,195 T980,220 T1250,205"/>
+                <path class="topo-line" d="M-50,150 Q300,110 450,140 T750,120 T1050,150 T1250,130"/>
+                <path class="topo-line-thin" d="M-50,170 Q250,140 420,155 T720,140 T1020,165 T1250,150"/>
+                <path class="topo-line" d="M-50,420 Q150,380 350,400 T650,385 T950,410 T1250,395"/>
+                <path class="topo-line-thin" d="M-50,450 Q200,420 380,435 T680,420 T980,445 T1250,430"/>
+                <path class="topo-line" d="M-50,480 Q180,450 330,465 T630,450 T930,475 T1250,460"/>
+                <path class="topo-line-thin" d="M-50,100 Q350,70 500,95 T800,80 T1100,100 T1250,90"/>
+                <!-- Closed contour forms — like elevation peaks -->
+                <ellipse class="topo-line-thin" cx="350" cy="250" rx="120" ry="60" transform="rotate(-8 350 250)"/>
+                <ellipse class="topo-line" cx="350" cy="250" rx="80" ry="38" transform="rotate(-8 350 250)"/>
+                <ellipse class="topo-line-thin" cx="850" cy="350" rx="100" ry="50" transform="rotate(5 850 350)"/>
+                <ellipse class="topo-line" cx="850" cy="350" rx="60" ry="28" transform="rotate(5 850 350)"/>
+                <ellipse class="topo-line-thin" cx="600" cy="150" rx="90" ry="40" transform="rotate(-3 600 150)"/>
+            </svg>
+        </div>
+        <h1 class="animate-on-scroll">Dr <span class="name-accent">Amal</span> Chakhar</h1>
+        <p class="subtitle animate-on-scroll">Postdoctoral Research Fellow</p>
+        <p class="affiliation animate-on-scroll">
+            <a href="https://environment.leeds.ac.uk/see" target="_blank" rel="noopener">School of Earth and Environment</a> · University of Leeds
+        </p>
+        <p class="tagline animate-on-scroll">
+            Using remote sensing and machine learning to build resilient, sustainable agricultural systems.
+        </p>
+        <div class="links animate-on-scroll">
+            <a href="https://scholar.google.com/citations?user=PFJsJAsAAAAJ" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+                Scholar
+            </a>
+            <a href="https://orcid.org/0000-0002-4294-1015" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-1.847-1.178-3.722-3.953-3.722h-2.366z"/></svg>
+                ORCID
+            </a>
+            <a href="https://www.researchgate.net/profile/Amal-Chakhar" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0c-1.37 0-2.573.81-3.109 1.98h-.002C14.954.673 13.452 0 11.79 0 8.707 0 6.2 2.507 6.2 5.59c0 3.083 2.507 5.59 5.59 5.59 1.66 0 3.164-.673 4.685-1.98h.002c.536 1.17 1.739 1.98 3.109 1.98C21.758 11.18 24 8.867 24 5.59 24 2.313 21.758 0 19.586 0zM11.79 9.4c-2.1 0-3.81-1.71-3.81-3.81s1.71-3.81 3.81-3.81c2.1 0 3.81 1.71 3.81 3.81S13.89 9.4 11.79 9.4zm7.796-1.59V5.5h-2.31v2.31h-2.31v1.78h2.31v2.31h1.78v-2.31h2.31V7.81h-2.31z"/></svg>
+                ResearchGate
+            </a>
+            <a href="mailto:A.Chakhar@leeds.ac.uk">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                Email
+            </a>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="about animate-on-scroll">
+        <h2>About</h2>
+        <p>
+            I am a Postdoctoral Research Fellow at the <strong>School of Earth and Environment</strong>, University of Leeds, and a member of the <strong>Institute for Climate and Atmospheric Science</strong>.
+        </p>
+        <p>
+            My research focuses on developing Earth observation methodologies for sustainable agriculture, combining satellite remote sensing with machine learning to address challenges in crop classification, soil moisture retrieval, irrigation detection, and drought monitoring.
+        </p>
+        <p>
+            I currently contribute to the <strong>iSPARK</strong> project, developing Earth observation approaches for crop classification and drought and irrigation monitoring to support sustainable agriculture in Kenya.
+        </p>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="animate-on-scroll">
+        <h2>Research</h2>
+        <div class="research-areas">
+            <span class="research-tag stagger-item">Remote Sensing</span>
+            <span class="research-tag stagger-item">Precision Agriculture</span>
+            <span class="research-tag stagger-item">Crop Classification</span>
+            <span class="research-tag stagger-item">Machine Learning</span>
+            <span class="research-tag stagger-item">Soil Moisture Retrieval</span>
+            <span class="research-tag stagger-item">Irrigation Detection</span>
+            <span class="research-tag stagger-item">Evapotranspiration</span>
+            <span class="research-tag stagger-item">Drought Monitoring</span>
+        </div>
+
+        <div class="project animate-on-scroll">
+            <h3>iSPARK</h3>
+            <p class="project-meta">University of Leeds · Current</p>
+            <p>Innovation in Sustainability, Policy, Adaptation and Resilience in Kenya — developing Earth observation methodologies for crop classification and drought and irrigation monitoring to safeguard food security in western Kenya.</p>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="animate-on-scroll">
+        <h2>Publications</h2>
+        <ul class="pub-list">
+
+            <li class="pub-item stagger-item">
+                <a class="pub-title" href="https://doi.org/10.5194/piahs-385-443-2024" target="_blank" rel="noopener">Assessing the Accuracy of Multiple Classification Algorithms Combining Sentinel-1 and Sentinel-2 for the Citrus Crop Classification and Spatialization of the Actual Evapotranspiration Obtained from Flux Tower Eddy Covariance: Case Study of Cap Bon, Tunisia</a>
+                <p class="pub-authors"><span class="highlight">A. Chakhar</span>, R. Zitouna-Chebbi, D. Hern&aacute;ndez-L&oacute;pez, R. Ballesteros, I. Mahjoub, M.A. Moreno</p>
+                <p class="pub-venue"><em>Proceedings of IAHS</em>, 385, 443–448</p>
+                <span class="pub-year">2024</span>
+            </li>
+
+            <li class="pub-item stagger-item">
+                <a class="pub-title" href="https://doi.org/10.3390/rs16030458" target="_blank" rel="noopener">Irrigation Detection Using Sentinel-1 and Sentinel-2 Time Series on Fruit Tree Orchards</a>
+                <p class="pub-authors"><span class="highlight">A. Chakhar</span>, D. Hern&aacute;ndez-L&oacute;pez, R. Ballesteros, M.A. Moreno</p>
+                <p class="pub-venue"><em>Remote Sensing</em>, 16(3), 458</p>
+                <span class="pub-year">2024</span>
+            </li>
+
+            <li class="pub-item stagger-item">
+                <a class="pub-title" href="https://doi.org/10.3390/rs14195013" target="_blank" rel="noopener">Optimized Software Tools to Generate Large Spatio-Temporal Data Using the Datacubes Concept: Application to Crop Classification in Cap Bon, Tunisia</a>
+                <p class="pub-authors"><span class="highlight">A. Chakhar</span>, D. Hern&aacute;ndez-L&oacute;pez, R. Ballesteros, R. Zitouna-Chebbi, M.A. Moreno</p>
+                <p class="pub-venue"><em>Remote Sensing</em>, 14(19), 5013</p>
+                <span class="pub-year">2022</span>
+            </li>
+
+            <li class="pub-item stagger-item">
+                <a class="pub-title" href="https://doi.org/10.3390/rs13244968" target="_blank" rel="noopener">Improvement of the Soil Moisture Retrieval Procedure Based on the Integration of UAV Photogrammetry and Satellite Remote Sensing Information</a>
+                <p class="pub-authors"><span class="highlight">A. Chakhar</span>, D. Hern&aacute;ndez-L&oacute;pez, R. Ballesteros, M.A. Moreno</p>
+                <p class="pub-venue"><em>Remote Sensing</em>, 13(24), 4968</p>
+                <span class="pub-year">2021</span>
+            </li>
+
+            <li class="pub-item stagger-item">
+                <a class="pub-title" href="https://doi.org/10.3390/rs13081546" target="_blank" rel="noopener">Design of a Local Nested Grid for the Optimal Combined Use of Landsat 8 and Sentinel 2 Data</a>
+                <p class="pub-authors"><span class="highlight">A. Chakhar</span>, D. Hern&aacute;ndez-L&oacute;pez, R. Ballesteros, M.A. Moreno</p>
+                <p class="pub-venue"><em>Remote Sensing</em>, 13(8), 1546</p>
+                <span class="pub-year">2021</span>
+            </li>
+
+            <li class="pub-item stagger-item">
+                <a class="pub-title" href="https://doi.org/10.3390/rs13020243" target="_blank" rel="noopener">Improving the Accuracy of Multiple Algorithms for Crop Classification by Integrating Sentinel-1 Observations with Sentinel-2 Data</a>
+                <p class="pub-authors"><span class="highlight">A. Chakhar</span>, D. Hern&aacute;ndez-L&oacute;pez, R. Ballesteros, M.A. Moreno</p>
+                <p class="pub-venue"><em>Remote Sensing</em>, 13(2), 243</p>
+                <span class="pub-year">2021</span>
+            </li>
+
+            <li class="pub-item stagger-item">
+                <a class="pub-title" href="https://doi.org/10.3390/rs12193136" target="_blank" rel="noopener">Applications of Remote Sensing in Precision Agriculture: A Review</a>
+                <p class="pub-authors"><span class="highlight">A. Chakhar</span>, O. Ortega-Terol, D. Hern&aacute;ndez-L&oacute;pez, R. Ballesteros, L. Ortega-Terol, M.A. Moreno</p>
+                <p class="pub-venue"><em>Remote Sensing</em>, 12(19), 3136</p>
+                <span class="pub-year">2020</span>
+            </li>
+
+            <li class="pub-item stagger-item">
+                <a class="pub-title" href="https://doi.org/10.3390/rs12111735" target="_blank" rel="noopener">Assessing the Accuracy of Multiple Classification Algorithms for Crop Classification Using Landsat-8 and Sentinel-2 Data</a>
+                <p class="pub-authors"><span class="highlight">A. Chakhar</span>, O. Ortega-Terol, D. Hern&aacute;ndez-L&oacute;pez, R. Ballesteros, L. Ortega-Terol, M.A. Moreno</p>
+                <p class="pub-venue"><em>Remote Sensing</em>, 12(11), 1735</p>
+                <span class="pub-year">2020</span>
+            </li>
+
+            <li class="pub-item stagger-item">
+                <a class="pub-title" href="https://doi.org/10.3390/atmos9020068" target="_blank" rel="noopener">Observing Actual Evapotranspiration from Flux Tower Eddy Covariance Measurements within a Hilly Watershed: Case Study of the Kamech Site, Cap Bon Peninsula, Tunisia</a>
+                <p class="pub-authors">R. Zitouna-Chebbi, L. Pr&eacute;vot, <span class="highlight">A. Chakhar</span>, M. Marniche-Ben Abdallah, D. Jacob</p>
+                <p class="pub-venue"><em>Atmosphere</em>, 9(2), 68</p>
+                <span class="pub-year">2018</span>
+            </li>
+
+            <li class="pub-item stagger-item">
+                <a class="pub-title" href="https://doi.org/10.3390/ecas2017-04113" target="_blank" rel="noopener">Observing Actual Evapotranspiration within a Hilly Watershed: Case Study of the Kamech Site, Cap Bon Peninsula, Tunisia</a>
+                <p class="pub-authors">R. Zitouna-Chebbi, L. Pr&eacute;vot, <span class="highlight">A. Chakhar</span>, M. Marniche-Ben Abdallah, D. Jacob</p>
+                <p class="pub-venue"><em>Proceedings</em>, 1(5), 113</p>
+                <span class="pub-year">2017</span>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="animate-on-scroll">
+        <h2>Education</h2>
+        <ul class="edu-list">
+            <li class="edu-item stagger-item">
+                <p class="edu-degree">PhD in Agricultural and Environmental Sciences</p>
+                <p class="edu-institution">University of Castilla-La Mancha, Spain</p>
+                <p class="edu-year">2023</p>
+            </li>
+            <li class="edu-item stagger-item">
+                <p class="edu-degree">MSc in Integrated Planning for Rural Development and Environmental Management</p>
+                <p class="edu-institution">Spain</p>
+                <p class="edu-year"></p>
+            </li>
+            <li class="edu-item stagger-item">
+                <p class="edu-degree">Engineering Degree in Horticultural Systems</p>
+                <p class="edu-institution">University of Sousse, Tunisia</p>
+                <p class="edu-year">2015</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="animate-on-scroll">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+            <a class="contact-card stagger-item" href="mailto:A.Chakhar@leeds.ac.uk">
+                <p class="contact-label">Email</p>
+                <p class="contact-value">A.Chakhar@leeds.ac.uk</p>
+            </a>
+            <a class="contact-card stagger-item" href="https://environment.leeds.ac.uk/see/staff/12876/dr-amal-chakhar" target="_blank" rel="noopener">
+                <p class="contact-label">University Profile</p>
+                <p class="contact-value">University of Leeds</p>
+            </a>
+            <a class="contact-card stagger-item" href="https://orcid.org/0000-0002-4294-1015" target="_blank" rel="noopener">
+                <p class="contact-label">ORCID</p>
+                <p class="contact-value">0000-0002-4294-1015</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Dr Amal Chakhar. All rights reserved.</p>
+    </footer>
+
+    <!-- Easter egg -->
+    <div class="ee-overlay" id="ee">
+        <div class="ee-content">
+            <p class="ee-message">This page was made with love, just for you.</p>
+            <p class="ee-sub">Happy Valentine's Day, Amal.</p>
+        </div>
+    </div>
+
+    <style>
+        .ee-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 10, 8, 0.0);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.6s, background 0.6s;
+        }
+
+        .ee-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+            background: rgba(10, 10, 8, 0.85);
+            cursor: pointer;
+        }
+
+        .ee-content {
+            text-align: center;
+            transform: translateY(20px);
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .ee-overlay.active .ee-content {
+            transform: translateY(0);
+        }
+
+        .ee-message {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: #fff;
+            font-style: italic;
+            margin-bottom: 0.6rem;
+            opacity: 0;
+            transition: opacity 0.8s 0.3s;
+        }
+
+        .ee-sub {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.6);
+            opacity: 0;
+            transition: opacity 0.8s 0.8s;
+        }
+
+        .ee-overlay.active .ee-message,
+        .ee-overlay.active .ee-sub {
+            opacity: 1;
+        }
+
+        .ee-particle {
+            position: fixed;
+            z-index: 10000;
+            pointer-events: none;
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: ee-float 4s ease-out forwards;
+        }
+
+        @keyframes ee-float {
+            0% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) rotate(360deg) scale(0.3);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .ee-message { font-size: 1.2rem; }
+            .ee-sub { font-size: 1rem; }
+        }
+    </style>
+
+    <script>
+    (function() {
+        // --- Dark mode ---
+        var toggle = document.getElementById('theme-toggle');
+        var html = document.documentElement;
+
+        function setTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
+
+        // Initialise from stored preference or system preference
+        var stored = localStorage.getItem('theme');
+        if (stored) {
+            setTheme(stored);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme('dark');
+        }
+
+        toggle.addEventListener('click', function() {
+            var current = html.getAttribute('data-theme');
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        // --- Scroll animations ---
+        var animatedElements = document.querySelectorAll('.animate-on-scroll');
+        var staggerContainers = document.querySelectorAll('.research-areas, .pub-list, .edu-list, .contact-grid');
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        animatedElements.forEach(function(el) {
+            observer.observe(el);
+        });
+
+        // Staggered animations for child items
+        var staggerObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var items = entry.target.querySelectorAll('.stagger-item');
+                    items.forEach(function(item, index) {
+                        setTimeout(function() {
+                            item.classList.add('is-visible');
+                        }, index * 80);
+                    });
+                    staggerObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.05,
+            rootMargin: '0px 0px -20px 0px'
+        });
+
+        staggerContainers.forEach(function(container) {
+            staggerObserver.observe(container);
+        });
+
+        // --- Easter egg ---
+        var secret = 'amal';
+        var buffer = '';
+        var overlay = document.getElementById('ee');
+        var active = false;
+
+        document.addEventListener('keydown', function(e) {
+            if (active) return;
+            buffer += e.key.toLowerCase();
+            if (buffer.length > secret.length) {
+                buffer = buffer.slice(-secret.length);
+            }
+            if (buffer === secret) {
+                activate();
+                buffer = '';
+            }
+        });
+
+        // Mobile: 4 taps on "Amal"
+        var nameEl = document.querySelector('.name-accent');
+        var taps = [];
+        if (nameEl) {
+            nameEl.addEventListener('click', function() {
+                if (active) return;
+                var now = Date.now();
+                taps.push(now);
+                taps = taps.filter(function(t) { return now - t < 1500; });
+                if (taps.length >= 4) {
+                    taps = [];
+                    activate();
+                }
+            });
+        }
+
+        function activate() {
+            active = true;
+            spawnParticles();
+            overlay.classList.add('active');
+
+            overlay.addEventListener('click', dismiss);
+            document.addEventListener('keydown', dismissOnKey);
+        }
+
+        function dismiss() {
+            overlay.classList.remove('active');
+            overlay.removeEventListener('click', dismiss);
+            document.removeEventListener('keydown', dismissOnKey);
+            setTimeout(function() { active = false; }, 800);
+        }
+
+        function dismissOnKey(e) {
+            if (e.key === 'Escape' || e.key === ' ') {
+                dismiss();
+            }
+        }
+
+        function spawnParticles() {
+            var symbols = ['🌿', '🍂', '🌾', '✨', '🍃', '🌻'];
+            for (var i = 0; i < 30; i++) {
+                (function(i) {
+                    setTimeout(function() {
+                        var el = document.createElement('span');
+                        el.className = 'ee-particle';
+                        el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                        el.style.left = (Math.random() * 100) + 'vw';
+                        el.style.top = (60 + Math.random() * 40) + 'vh';
+                        el.style.animationDuration = (3 + Math.random() * 3) + 's';
+                        el.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
+                        document.body.appendChild(el);
+                        setTimeout(function() { el.remove(); }, 6000);
+                    }, i * 100);
+                })(i);
+            }
+        }
+
+        // Console message with updated colours
+        console.log(
+            '%c🌿 This page was built with love. Happy Valentine\'s Day, Amal.',
+            'font-size: 14px; color: #b45a3c; font-style: italic; padding: 8px 0;'
+        );
+    })();
+    </script>
+
+</body>
+</html>

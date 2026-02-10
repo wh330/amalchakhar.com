@@ -203,6 +203,34 @@
             transform: rotate(15deg);
         }
 
+        /* Hamburger button — hidden on desktop */
+        .hamburger {
+            display: none;
+            background: none;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 0.4rem;
+            cursor: pointer;
+            color: var(--color-text-secondary);
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .hamburger:hover {
+            border-color: var(--color-accent-warm);
+            color: var(--color-accent-warm);
+            background: var(--color-tag-bg);
+        }
+
+        .hamburger svg {
+            width: 18px;
+            height: 18px;
+        }
+
         .theme-toggle .icon-moon { display: none; }
         .theme-toggle .icon-sun { display: block; }
 
@@ -616,12 +644,56 @@
                 padding: 0.8rem 1.2rem;
             }
 
+            /* Show hamburger on mobile */
+            .hamburger {
+                display: flex;
+            }
+
+            /* Hide nav links by default on mobile */
             nav .nav-links {
-                gap: 0.8rem;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: var(--nav-bg);
+                backdrop-filter: blur(14px);
+                -webkit-backdrop-filter: blur(14px);
+                border-bottom: 1px solid var(--color-border);
+                box-shadow: 0 4px 12px var(--color-card-shadow);
+                padding: 0;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            nav .nav-links.open {
+                max-height: 20rem;
+            }
+
+            nav .nav-links li {
+                border-bottom: 1px solid var(--color-border);
+            }
+
+            nav .nav-links li:last-child {
+                border-bottom: none;
             }
 
             nav .nav-links a {
-                font-size: 0.78rem;
+                display: block;
+                padding: 0.85rem 1.5rem;
+                font-size: 0.9rem;
+                min-height: 44px;
+                line-height: 1.5;
+            }
+
+            nav .nav-links a::after {
+                display: none;
+            }
+
+            nav .nav-links a:hover {
+                background: var(--color-tag-bg);
             }
 
             .contact-grid {
@@ -655,6 +727,9 @@
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                     <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu" title="Toggle menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
                 </button>
             </div>
         </div>
@@ -988,6 +1063,28 @@
         toggle.addEventListener('click', function() {
             var current = html.getAttribute('data-theme');
             setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        // --- Hamburger menu ---
+        var hamburger = document.getElementById('hamburger');
+        var navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('open');
+        });
+
+        // Close menu when a nav link is clicked
+        navLinks.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-right') && !e.target.closest('.nav-links')) {
+                navLinks.classList.remove('open');
+            }
         });
 
         // --- Scroll animations ---

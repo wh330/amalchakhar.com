@@ -2,19 +2,9 @@
 
 Guidance for Claude / AI assistants working in this repo.
 
-## Important: daily dependency cleanup
+## No runtime dependencies
 
-This repo lives under `~/wh330`, which shares a daily cleanup job (`~/wh330/.cleanup.sh`, runs at 03:00) that **removes `node_modules`, `.venv`, `.next`, `.turbo`, `__pycache__` from any project whose source files have not been modified in the last 24h**. Source code is never touched.
-
-**Before doing any work in this repo, check that dependencies are installed and reinstall if missing.** On session start, run:
-
-- Node projects: `[ -d node_modules ] || npm install`
-- Python projects: `[ -d .venv ] || (python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt)`
-- Flutter projects: `flutter pub get` (idempotent — safe to always run)
-
-**Why:** keeps the playground tidy and reclaims gigabytes from idle experiments. Fresh installs when resuming work keep dependencies current and avoid drift between lockfile and on-disk state. Active projects are detected automatically and skipped.
-
-**Stopping work:** just leave it. The cleanup runs overnight only against idle projects.
+Static HTML + LaTeX. Nothing to install at session start. See [`../CLAUDE.md`](../CLAUDE.md) for workspace conventions.
 
 ---
 

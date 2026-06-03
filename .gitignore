@@ -1,0 +1,31 @@
+# LaTeX build artefacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+
+# Note: compiled *.pdf files are intentionally NOT ignored.
+# We commit the latest main.pdf in each cv variant so the current CV is
+# always available without rebuilding.
+
+# OS / editor files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+*.tmp
+*.bak
+

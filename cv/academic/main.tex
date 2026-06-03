@@ -1,0 +1,209 @@
+% Academic CV — Dr Amal Chakhar
+% Compile with: latexmk -pdf main.tex   (or: pdflatex; biber main; pdflatex; pdflatex)
+% This template is ATS-safe: no images, no two-column layout, no text inside
+% TikZ. Don't break this — see ../GUIDE.md for the full set of rules.
+
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[top=1.5cm, bottom=1.5cm, left=1.7cm, right=1.7cm]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+% Link colour matches the accent on amalchakhar.com (#1a3a2a — deep green).
+\definecolor{linkColor}{RGB}{26, 58, 42}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Dr Amal Chakhar — CV},
+    pdfauthor={Amal Chakhar},
+    pdfcreator={LaTeX},
+    colorlinks=true,
+    urlcolor=linkColor,
+    linkcolor=linkColor,
+    citecolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% ATS compatibility: ensure the PDF text layer is searchable plain text.
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Bibliography — publications.bib lives next to main.tex (self-contained,
+% so this folder zips and uploads to Overleaf without any path tweaks).
+% Sync rule: when a new paper is accepted, update publications.bib HERE,
+% in industry/publications.bib, AND in index.html.
+\usepackage[backend=biber, style=numeric, sorting=ydnt]{biblatex}
+\addbibresource{publications.bib}
+\AtBeginBibliography{\footnotesize}
+
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.3cm}{0.2cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10cm,
+        parsep=0.10cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\let\hrefWithoutArrow\href
+
+\newcommand{\AND}{\unskip
+    \cleaders\copy\ANDbox\hskip\wd\ANDbox
+    \ignorespaces
+}
+\newsavebox\ANDbox
+\sbox\ANDbox{$|$}
+
+\begin{document}
+
+\begin{header}
+    \fontsize{25pt}{25pt}\selectfont Dr Amal Chakhar
+
+    \vspace{5pt}
+
+    \normalsize
+    \mbox{Leeds, UK}%
+    \kern 5.0pt%
+    \AND%
+    \kern 5.0pt%
+    \mbox{\href{mailto:A.Chakhar@leeds.ac.uk}{A.Chakhar@leeds.ac.uk}}%
+    \kern 5.0pt%
+    \AND%
+    \kern 5.0pt%
+    \mbox{\href{https://amalchakhar.com}{amalchakhar.com}}%
+    \kern 5.0pt%
+    \AND%
+    \kern 5.0pt%
+    \mbox{\href{https://orcid.org/0000-0002-4294-1015}{ORCID 0000-0002-4294-1015}}%
+    \kern 5.0pt%
+    \AND%
+    \kern 5.0pt%
+    \mbox{\href{https://scholar.google.com/citations?user=PFJsJAsAAAAJ}{Google Scholar}}%
+\end{header}
+
+\vspace{5pt - 0.3cm}
+
+\section{Research Interests}
+
+Remote sensing \textbullet{} precision agriculture \textbullet{} crop classification \textbullet{} machine learning for Earth observation \textbullet{} soil moisture retrieval \textbullet{} irrigation detection \textbullet{} evapotranspiration \textbullet{} drought monitoring.
+
+\section{Current Position}
+
+\textbf{Postdoctoral Research Fellow}, School of Earth and Environment, University of Leeds \hfill % TODO: confirm start date with Amal
+Aug 2023 -- Present
+
+\vspace{0.10cm}
+\begin{highlights}
+    \item Member of the Institute for Climate and Atmospheric Science.
+    \item Contributing to \textbf{iSPARK} (Innovation in Sustainability, Policy, Adaptation and Resilience in Kenya): developing Earth observation methodologies for crop classification and drought and irrigation monitoring to safeguard food security in western Kenya.
+    % TODO: uncomment and fill 1--2 quantified bullets, e.g.:
+    % \item Trained classifier achieving \textbf{X\%} overall accuracy on Y km\textsuperscript{2} of imagery.
+    % \item Delivered open-source pipeline that processes Z scenes/day.
+\end{highlights}
+
+\section{Education}
+
+\textbf{PhD in Agricultural and Environmental Sciences}, University of Castilla-La Mancha, Spain \hfill 2023
+
+% Optional: add details by uncommenting the block below.
+% \vspace{0.10cm}
+% \begin{highlights}
+%     \item Thesis: \emph{<thesis title>}.
+%     \item Supervisor(s): Prof.\ Miguel A.\ Moreno (UCLM).
+%     \item <one-line summary of the contribution / award if any>.
+% \end{highlights}
+
+\vspace{0.2cm}
+
+\textbf{MSc in Integrated Planning for Rural Development and Environmental Management}, Spain \hfill % TODO: year
+
+\vspace{0.2cm}
+
+\textbf{Engineering Degree in Horticultural Systems}, University of Sousse, Tunisia \hfill 2015
+
+\section{Skills and Tools}
+
+\textbf{Programming:} Python (NumPy, pandas, scikit-learn), R, % TODO: confirm — JavaScript for Google Earth Engine?
+
+\vspace{0.2cm}
+
+\textbf{Earth Observation:} Sentinel-1 (SAR), Sentinel-2 (multispectral), Landsat-8, UAV photogrammetry, time-series analysis, datacubes.
+
+\vspace{0.2cm}
+
+\textbf{Machine Learning:} Supervised classification (Random Forest, SVM, kNN), accuracy assessment, feature engineering on multi-source EO data.
+
+\vspace{0.2cm}
+
+\textbf{Geospatial:} Google Earth Engine, QGIS, ArcGIS, GDAL.
+
+\vspace{0.2cm}
+
+\textbf{Languages:} Spanish, English, French (professional working proficiency); Arabic (native).
+
+\section{Publications}
+
+\nocite{*}
+\printbibliography[heading=none]
+
+\section{Conference Presentations and Talks}
+
+% TODO: list talks/posters not already captured as proceedings.
+% Format: Title, venue, location, year.
+
+\section{Teaching and Supervision}
+
+% TODO: any teaching, lab demonstrating, MSc/BSc supervision, mentoring.
+
+\section{Awards and Grants}
+
+% TODO: scholarships, travel grants, best paper / poster awards, fellowships.
+
+\section{Professional Activities}
+
+% TODO: peer review for which journals, society memberships, organising committees.
+
+\section{References}
+
+Available on request.
+
+\end{document}

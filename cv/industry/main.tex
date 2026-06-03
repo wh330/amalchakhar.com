@@ -1,0 +1,160 @@
+% Industry resume — Dr Amal Chakhar
+% Single page. Lead with impact and skills, not narrative.
+% Compile with: latexmk -pdf main.tex   (or: pdflatex; biber main; pdflatex; pdflatex)
+% This template is ATS-safe — see ../GUIDE.md for the rules.
+
+\documentclass[10pt, a4paper]{article}
+
+% Tighter geometry than the academic CV — we need to fit on 1 page.
+\usepackage[top=1.2cm, bottom=1.2cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+% Link colour matches the accent on amalchakhar.com (#1a3a2a — deep green).
+\definecolor{linkColor}{RGB}{26, 58, 42}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage[
+    pdftitle={Amal Chakhar — Resume},
+    pdfauthor={Amal Chakhar},
+    pdfcreator={LaTeX},
+    colorlinks=true,
+    urlcolor=linkColor,
+    linkcolor=linkColor,
+    citecolor=primaryColor
+]{hyperref}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% publications.bib lives next to main.tex (self-contained for Overleaf).
+% Sync rule: keep this file identical to academic/publications.bib and the
+% list in index.html.
+\usepackage[backend=biber, style=numeric, sorting=ydnt]{biblatex}
+\addbibresource{publications.bib}
+\AtBeginBibliography{\footnotesize}
+
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.25cm}{0.15cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.05cm,
+        parsep=0.05cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.4}
+}{
+    \par\kern\topsep
+}
+
+\newcommand{\AND}{\unskip
+    \cleaders\copy\ANDbox\hskip\wd\ANDbox
+    \ignorespaces
+}
+\newsavebox\ANDbox
+\sbox\ANDbox{$|$}
+
+\begin{document}
+
+\begin{header}
+    \fontsize{22pt}{22pt}\selectfont Amal Chakhar, PhD
+
+    \vspace{4pt}
+
+    \small
+    \mbox{Leeds, UK}%
+    \kern 5.0pt%
+    \AND%
+    \kern 5.0pt%
+    \mbox{\href{mailto:A.Chakhar@leeds.ac.uk}{A.Chakhar@leeds.ac.uk}}%
+    \kern 5.0pt%
+    \AND%
+    \kern 5.0pt%
+    \mbox{\href{https://amalchakhar.com}{amalchakhar.com}}%
+    \kern 5.0pt%
+    \AND%
+    \kern 5.0pt%
+    \mbox{\href{https://scholar.google.com/citations?user=PFJsJAsAAAAJ}{Google Scholar}}%
+\end{header}
+
+\vspace{2pt}
+
+\section{Profile}
+
+Earth-observation scientist with a PhD and 8+ peer-reviewed publications applying machine learning to satellite imagery for agriculture. Builds end-to-end pipelines on Sentinel-1/-2 and Landsat data — from ingestion and feature engineering to classification and validation — to answer real questions about crops, water and drought.
+% TODO: tighten this 2-line pitch to the specific role you're applying for. See ../GUIDE.md.
+
+\section{Skills}
+
+\textbf{Programming:} Python (pandas, NumPy, scikit-learn), R, SQL.\\
+\textbf{Earth Observation:} Sentinel-1 (SAR), Sentinel-2, Landsat-8, UAV photogrammetry, time-series analysis, datacubes.\\
+\textbf{Machine Learning:} Supervised classification (Random Forest, SVM, kNN), accuracy assessment, feature engineering on multi-source EO data.\\
+\textbf{Geospatial:} Google Earth Engine, QGIS, ArcGIS, GDAL.\\
+\textbf{Domain:} Crop classification, soil moisture retrieval, irrigation detection, evapotranspiration, drought monitoring.\\
+\textbf{Languages:} Spanish, English, French (professional working proficiency); Arabic (native).
+
+\section{Experience}
+
+\textbf{Postdoctoral Research Fellow}, University of Leeds -- Leeds, UK \hfill Aug 2023 -- Present
+\vspace{0.05cm}
+\begin{highlights}
+    \item Build Earth observation pipelines for the iSPARK programme — crop classification and drought / irrigation monitoring across western Kenya to support food-security policy decisions.
+    % TODO: uncomment and fill the quantified bullets below.
+    % \item Trained Random Forest classifier achieving \textbf{92\%} overall accuracy on a 10{,}000~km\textsuperscript{2} study area.
+    % \item Automated Sentinel-1/-2 ingestion pipeline on Google Earth Engine, processing N scenes per day.
+\end{highlights}
+
+\vspace{0.15cm}
+
+\textbf{Doctoral Researcher}, University of Castilla-La Mancha -- Albacete, Spain \hfill 2018 -- 2023
+\vspace{0.05cm}
+\begin{highlights}
+    \item Authored 8 peer-reviewed papers on Sentinel-1/-2 fusion for crop classification, soil moisture retrieval, and irrigation detection (full list at amalchakhar.com).
+    \item Designed a local nested grid combining Landsat-8 and Sentinel-2 — published in \emph{Remote Sensing} (2021).
+    \item Developed open software tooling for spatio-temporal datacubes, applied to crop classification in Cap Bon, Tunisia.
+\end{highlights}
+
+\section{Selected Publications}
+
+\nocite{chakhar2024irrigation, chakhar2022datacubes, chakhar2020review}
+\printbibliography[heading=none]
+
+\section{Education}
+
+\textbf{PhD}, Agricultural and Environmental Sciences, University of Castilla-La Mancha, Spain \hfill 2023\\
+\textbf{MSc}, Integrated Planning for Rural Development and Environmental Management, Spain \hfill % TODO: year\\
+\textbf{Engineering Degree}, Horticultural Systems, University of Sousse, Tunisia \hfill 2015
+
+\end{document}

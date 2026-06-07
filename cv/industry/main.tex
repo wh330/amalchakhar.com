@@ -107,18 +107,23 @@
     \AND%
     \kern 5.0pt%
     \mbox{\href{https://scholar.google.com/citations?user=PFJsJAsAAAAJ}{Google Scholar}}%
+    % Amal has no LinkedIn on file (not provided in her 07/06/2026 CV). Uncomment and fill if she creates one.
+    %\kern 5.0pt%
+    %\AND%
+    %\kern 5.0pt%
+    %\mbox{\href{https://www.linkedin.com/in/<handle>}{LinkedIn}}%
 \end{header}
 
 \vspace{2pt}
 
 \section{Profile}
 
-Earth-observation scientist with a PhD and 8+ peer-reviewed publications applying machine learning to satellite imagery for agriculture. Builds end-to-end pipelines on Sentinel-1/-2 and Landsat data — from ingestion and feature engineering to classification and validation — to answer real questions about crops, water and drought.
+Earth-observation scientist (PhD) with 10 peer-reviewed papers, applying machine learning to Sentinel-1/-2 and Landsat imagery for agriculture. Builds end-to-end pipelines — from ingestion and feature engineering to classification, validation and policy-ready maps — to answer real questions about crops, water and drought.
 % TODO: tighten this 2-line pitch to the specific role you're applying for. See ../GUIDE.md.
 
 \section{Skills}
 
-\textbf{Programming:} Python (pandas, NumPy, scikit-learn), R, SQL.\\
+\textbf{Programming:} Python (pandas, NumPy, scikit-learn), JavaScript (Google Earth Engine), R, Git.\\
 \textbf{Earth Observation:} Sentinel-1 (SAR), Sentinel-2, Landsat-8, UAV photogrammetry, time-series analysis, datacubes.\\
 \textbf{Machine Learning:} Supervised classification (Random Forest, SVM, kNN), accuracy assessment, feature engineering on multi-source EO data.\\
 \textbf{Geospatial:} Google Earth Engine, QGIS, ArcGIS, GDAL.\\
@@ -127,34 +132,41 @@ Earth-observation scientist with a PhD and 8+ peer-reviewed publications applyin
 
 \section{Experience}
 
-\textbf{Postdoctoral Research Fellow}, University of Leeds -- Leeds, UK \hfill Aug 2023 -- Present
+\textbf{Research Fellow, Remote Sensing \& Crop Modelling}, University of Leeds -- Leeds, UK \hfill Jul 2024 -- Present
 \vspace{0.05cm}
 \begin{highlights}
-    \item Build Earth observation pipelines for the iSPARK programme — crop classification and drought / irrigation monitoring across western Kenya to support food-security policy decisions.
-    % TODO: uncomment and fill the quantified bullets below.
-    % \item Trained Random Forest classifier achieving \textbf{92\%} overall accuracy on a 10{,}000~km\textsuperscript{2} study area.
-    % \item Automated Sentinel-1/-2 ingestion pipeline on Google Earth Engine, processing N scenes per day.
+    \item Build multi-sensor Earth observation pipelines (Sentinel-1/-2 + machine learning) for the iSPARK programme — crop classification and drought monitoring across smallholder farming systems in western Kenya to support food-security policy.
+    \item Mapping drought stress in maize monocrop vs.\ intercrop systems; presented at the International Crop Modelling Symposium (iCROPM2026), Florence, 2026.
 \end{highlights}
 
 \vspace{0.15cm}
 
-\textbf{Doctoral Researcher}, University of Castilla-La Mancha -- Albacete, Spain \hfill 2018 -- 2023
+\textbf{Postdoctoral Researcher}, University of Castilla-La Mancha -- Albacete, Spain \hfill Mar 2023 -- Jun 2024
 \vspace{0.05cm}
 \begin{highlights}
-    \item Authored 8 peer-reviewed papers on Sentinel-1/-2 fusion for crop classification, soil moisture retrieval, and irrigation detection (full list at amalchakhar.com).
-    \item Designed a local nested grid combining Landsat-8 and Sentinel-2 — published in \emph{Remote Sensing} (2021).
-    \item Developed open software tooling for spatio-temporal datacubes, applied to crop classification in Cap Bon, Tunisia.
+    \item Applied UAVs and optical/radar satellite fusion to vine disease detection and irrigation monitoring for precision-agriculture applications.
+\end{highlights}
+
+\vspace{0.15cm}
+
+\textbf{Doctoral Researcher}, University of Castilla-La Mancha -- Albacete, Spain \hfill 2019 -- 2023
+\vspace{0.05cm}
+\begin{highlights}
+    \item Benchmarked 22 non-parametric classifiers across 12 crop types and 2{,}000+ field plots in semi-arid Spain, fusing Landsat-8 and Sentinel-2 to reach \textbf{$\sim$90\% F1} (\emph{Remote Sensing}, 2020).
+    \item Boosted crop-classification accuracy by integrating Sentinel-1 SAR (VV/VH) with Sentinel-2 NDVI across 9 feature scenarios, identifying the optimal feature--classifier pairing (\emph{Remote Sensing}, 2021).
+    \item Detected irrigated vs.\ rainfed orchards at \textbf{88.4\% accuracy} from Sentinel-1/-2 time series, and built an automated Sentinel Hub download-and-tiling pipeline (\emph{Remote Sensing}, 2024).
+    \item Retrieved surface soil moisture (\textbf{R\textsuperscript{2} up to 0.78}) by inverting IEM+WCM scattering models with neural networks, using UAV photogrammetry to measure surface roughness (\emph{Remote Sensing}, 2021).
 \end{highlights}
 
 \section{Selected Publications}
 
-\nocite{chakhar2024irrigation, chakhar2022datacubes, chakhar2020review}
+\nocite{chakhar2020accuracy, chakhar2021cropclassification, chakhar2024irrigation}
 \printbibliography[heading=none]
 
 \section{Education}
 
 \textbf{PhD}, Agricultural and Environmental Sciences, University of Castilla-La Mancha, Spain \hfill 2023\\
-\textbf{MSc}, Integrated Planning for Rural Development and Environmental Management, Spain \hfill % TODO: year\\
+\textbf{MSc}, Integrated Planning for Rural Development and Environmental Management, CIHEAM Zaragoza / Univ.\ Lleida, Spain \hfill 2018\\
 \textbf{Engineering Degree}, Horticultural Systems, University of Sousse, Tunisia \hfill 2015
 
 \end{document}

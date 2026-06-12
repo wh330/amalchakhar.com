@@ -22,6 +22,34 @@
     <!-- Canonical -->
     <link rel="canonical" href="https://amalchakhar.com">
 
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Amal Chakhar",
+        "honorificPrefix": "Dr",
+        "jobTitle": "Postdoctoral Research Fellow",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "University of Leeds",
+            "department": "School of Earth and Environment"
+        },
+        "url": "https://amalchakhar.com",
+        "sameAs": [
+            "https://scholar.google.com/citations?user=PFJsJAsAAAAJ",
+            "https://orcid.org/0000-0002-4294-1015",
+            "https://www.researchgate.net/profile/Amal-Chakhar"
+        ],
+        "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "University of Castilla-La Mancha" },
+            { "@type": "CollegeOrUniversity", "name": "CIHEAM Zaragoza / University of Lleida" },
+            { "@type": "CollegeOrUniversity", "name": "University of Sousse" }
+        ],
+        "knowsAbout": ["Remote sensing", "Earth observation", "Precision agriculture", "Machine learning", "Crop classification", "Soil moisture retrieval", "Irrigation detection", "Drought monitoring"]
+    }
+    </script>
+
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -342,6 +370,188 @@
         .hero .links svg {
             width: 16px;
             height: 16px;
+        }
+
+        .hero .links a.cv-download {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: var(--color-bg);
+            font-weight: 600;
+        }
+
+        .hero .links a.cv-download:hover {
+            background: var(--color-accent-warm);
+            border-color: var(--color-accent-warm);
+            color: var(--color-bg);
+        }
+
+        /* --- Metrics strip --- */
+        .metrics {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            transition: border-color 0.4s ease;
+        }
+
+        .metric {
+            flex: 1 1 auto;
+            min-width: 130px;
+            padding: 1.1rem 1.5rem 1.1rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        .metric + .metric {
+            padding-left: 1.5rem;
+            border-left: 1px solid var(--color-border);
+        }
+
+        .metric .metric-value {
+            font-family: var(--font-serif);
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .metric .metric-label {
+            font-size: 0.78rem;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        /* --- Research theme cards --- */
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1.8rem;
+        }
+
+        .theme-card {
+            padding: 1.4rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .theme-card:hover {
+            box-shadow: 0 4px 16px var(--color-card-shadow);
+            transform: translateY(-2px);
+            border-color: var(--color-accent);
+        }
+
+        .theme-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .theme-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.92rem;
+            flex-grow: 1;
+        }
+
+        .theme-card .theme-result {
+            font-size: 0.85rem;
+            color: var(--color-accent-warm);
+            font-weight: 500;
+        }
+
+        .theme-card .theme-result a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px dotted currentColor;
+            transition: color 0.2s;
+        }
+
+        .theme-card .theme-result a:hover {
+            color: var(--color-accent);
+        }
+
+        /* --- Timeline --- */
+        .timeline {
+            list-style: none;
+            margin-top: 1.5rem;
+            position: relative;
+            padding-left: 1.6rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            left: 0.3rem;
+            width: 2px;
+            background: var(--color-border);
+            border-radius: 1px;
+            transition: background 0.4s ease;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 0 0 1.8rem 0;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.6rem;
+            top: 0.45rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--color-bg);
+            border: 2px solid var(--color-accent);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover::before {
+            background: var(--color-accent-warm);
+            border-color: var(--color-accent-warm);
+        }
+
+        .timeline-period {
+            font-size: 0.78rem;
+            color: var(--color-accent-warm);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .timeline-role {
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-top: 0.15rem;
+        }
+
+        .timeline-org {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.35rem;
+            max-width: 600px;
         }
 
         /* --- Scroll animations --- */
@@ -720,6 +930,7 @@
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#research">Research</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -775,6 +986,10 @@
             Using remote sensing and machine learning to build resilient, sustainable agricultural systems.
         </p>
         <div class="links animate-on-scroll">
+            <a class="cv-download" href="cv/academic/main.pdf">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download CV
+            </a>
             <a href="https://scholar.google.com/citations?user=PFJsJAsAAAAJ" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
                 Scholar
@@ -791,6 +1006,24 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 Email
             </a>
+        </div>
+        <div class="metrics animate-on-scroll">
+            <div class="metric">
+                <span class="metric-value">10</span>
+                <span class="metric-label">Peer-reviewed publications</span>
+            </div>
+            <div class="metric">
+                <span class="metric-value">335</span>
+                <span class="metric-label">Citations</span>
+            </div>
+            <div class="metric">
+                <span class="metric-value">7</span>
+                <span class="metric-label">h-index</span>
+            </div>
+            <div class="metric">
+                <span class="metric-value">3</span>
+                <span class="metric-label">Countries of fieldwork</span>
+            </div>
         </div>
     </header>
 
@@ -822,11 +1055,65 @@
             <span class="research-tag stagger-item">Drought Monitoring</span>
         </div>
 
+        <div class="theme-grid">
+            <div class="theme-card stagger-item">
+                <h3>Crop classification</h3>
+                <p>Fusing Sentinel-1 SAR, Sentinel-2 and Landsat-8 time series with machine learning to map what is growing, where — from semi-arid Spain to smallholder Kenya.</p>
+                <span class="theme-result">~90% F1 across 12 crop types and 2,000+ field plots · <a href="https://doi.org/10.3390/rs12111735" target="_blank" rel="noopener">Remote Sensing, 2020</a></span>
+            </div>
+            <div class="theme-card stagger-item">
+                <h3>Irrigation detection</h3>
+                <p>Distinguishing irrigated from rainfed fields using satellite time series — evidence that matters for water accounting in water-limited regions.</p>
+                <span class="theme-result">88.4% accuracy on fruit-tree orchards · <a href="https://doi.org/10.3390/rs16030458" target="_blank" rel="noopener">Remote Sensing, 2024</a></span>
+            </div>
+            <div class="theme-card stagger-item">
+                <h3>Soil moisture retrieval</h3>
+                <p>Inverting radar scattering models with neural networks, using UAV photogrammetry to measure the surface roughness term in situ.</p>
+                <span class="theme-result">R&sup2; up to 0.78 over agricultural fields · <a href="https://doi.org/10.3390/rs13244968" target="_blank" rel="noopener">Remote Sensing, 2021</a></span>
+            </div>
+            <div class="theme-card stagger-item">
+                <h3>Evapotranspiration &amp; drought</h3>
+                <p>From flux-tower eddy covariance measurements in Tunisia to satellite-scale drought-stress monitoring of maize systems in western Kenya.</p>
+                <span class="theme-result">Field-validated ET in hilly watersheds · <a href="https://doi.org/10.3390/atmos9020068" target="_blank" rel="noopener">Atmosphere, 2018</a></span>
+            </div>
+        </div>
+
         <div class="project animate-on-scroll">
             <h3>iSPARK</h3>
             <p class="project-meta">University of Leeds · Current</p>
-            <p>Innovation in Sustainability, Policy, Adaptation and Resilience in Kenya — developing Earth observation methodologies for crop classification and drought and irrigation monitoring to safeguard food security in western Kenya.</p>
+            <p>Innovation in Sustainability, Policy, Adaptation and Resilience in Kenya — developing Earth observation methodologies for crop classification and drought and irrigation monitoring to safeguard food security in western Kenya. Presented at the 3rd International Crop Modelling Symposium (iCROPM2026), Florence.</p>
         </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="animate-on-scroll">
+        <h2>Experience</h2>
+        <ul class="timeline">
+            <li class="timeline-item stagger-item">
+                <span class="timeline-period">Jul 2024 — Present</span>
+                <p class="timeline-role">Postdoctoral Research Fellow</p>
+                <p class="timeline-org">School of Earth and Environment, University of Leeds, UK</p>
+                <p class="timeline-desc">Multi-sensor Earth observation for crop sustainability and resilience on the iSPARK programme — monitoring cropping systems and drought stress in smallholder farming systems across Eastern Africa.</p>
+            </li>
+            <li class="timeline-item stagger-item">
+                <span class="timeline-period">Mar 2023 — Jun 2024</span>
+                <p class="timeline-role">Postdoctoral Researcher</p>
+                <p class="timeline-org">Regional Development Institute (IDR), University of Castilla-La Mancha, Spain</p>
+                <p class="timeline-desc">UAV-based vine disease detection, irrigation monitoring, and optical–radar satellite fusion for precision agriculture.</p>
+            </li>
+            <li class="timeline-item stagger-item">
+                <span class="timeline-period">2019 — 2023</span>
+                <p class="timeline-role">Doctoral Researcher</p>
+                <p class="timeline-org">University of Castilla-La Mancha, Spain</p>
+                <p class="timeline-desc">PhD research on multi-sensor remote sensing and machine learning for crop classification and surface soil-moisture retrieval, under a competitive European Social Fund scholarship.</p>
+            </li>
+            <li class="timeline-item stagger-item">
+                <span class="timeline-period">2015 — 2016</span>
+                <p class="timeline-role">Research Staff</p>
+                <p class="timeline-org">National Institute for Research in Rural Engineering, Water and Forestry (INRGREF), Tunisia</p>
+                <p class="timeline-desc">Estimation of actual evapotranspiration from eddy covariance measurements in a hilly watershed on the Cap Bon peninsula.</p>
+            </li>
+        </ul>
     </section>
 
     <!-- Publications -->
@@ -918,8 +1205,8 @@
             </li>
             <li class="edu-item stagger-item">
                 <p class="edu-degree">MSc in Integrated Planning for Rural Development and Environmental Management</p>
-                <p class="edu-institution">Spain</p>
-                <p class="edu-year"></p>
+                <p class="edu-institution">CIHEAM Zaragoza / University of Lleida, Spain</p>
+                <p class="edu-year">2018</p>
             </li>
             <li class="edu-item stagger-item">
                 <p class="edu-degree">Engineering Degree in Horticultural Systems</p>
@@ -951,14 +1238,15 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Dr Amal Chakhar. All rights reserved.</p>
+        <p>Citation metrics from Google Scholar, June 2026.</p>
     </footer>
 
     <!-- Easter egg -->
     <div class="ee-overlay" id="ee">
+        <canvas id="ee-canvas" width="480" height="480"></canvas>
         <div class="ee-content">
-            <p class="ee-message"><em>"The spaces between my fingers are right where yours belong."</em></p>
+            <p class="ee-message"><em>"510 million km&sup2; of Earth under constant satellite observation &mdash; and the most remarkable thing ever detected is still you."</em></p>
         </div>
-        <div class="ee-heart-field" id="ee-heart-field"></div>
     </div>
 
     <style>
@@ -967,8 +1255,10 @@
             inset: 0;
             z-index: 9999;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 0.5rem;
             background: rgba(8, 6, 12, 0.0);
             pointer-events: none;
             opacity: 0;
@@ -991,8 +1281,8 @@
             transform: translateY(12px);
             transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
             z-index: 2;
-            padding: 3rem 2rem;
-            max-width: 520px;
+            padding: 0.5rem 2rem 1.5rem;
+            max-width: 560px;
         }
 
         .ee-content::before {
@@ -1044,41 +1334,28 @@
         .ee-message {
             font-family: var(--font-serif);
             font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.97);
             font-style: italic;
             line-height: 1.8;
-            margin-bottom: 1.6rem;
+            margin-bottom: 0;
             opacity: 0;
-            transition: opacity 1.8s 0.8s;
+            transition: opacity 1.8s 2.6s;
             letter-spacing: 0.01em;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 2px 18px rgba(0, 0, 0, 0.7);
         }
 
 
-        .ee-heart-field {
-            position: absolute;
-            width: 280px;
-            height: 280px;
+        #ee-canvas {
+            width: min(55vmin, 380px);
+            height: min(55vmin, 380px);
             z-index: 1;
             opacity: 0;
-            transition: opacity 2s 0.6s;
-        }
-
-        .ee-overlay.active .ee-heart-field {
-            opacity: 1;
-        }
-
-        .ee-heart-dot {
-            position: absolute;
-            border-radius: 50%;
+            transition: opacity 1s 0.3s;
             pointer-events: none;
-            opacity: 0;
-            animation: ee-dot-breathe var(--ee-dot-dur, 4s) ease-in-out var(--ee-dot-delay, 0s) infinite;
         }
 
-        @keyframes ee-dot-breathe {
-            0%, 100% { opacity: 0; transform: translate(var(--ee-wander-x, 0px), var(--ee-wander-y, 0px)) scale(0.4); }
-            40% { opacity: var(--ee-dot-peak, 0.35); transform: translate(0, 0) scale(1); }
-            60% { opacity: var(--ee-dot-peak, 0.35); transform: translate(0, 0) scale(1); }
+        .ee-overlay.active #ee-canvas {
+            opacity: 1;
         }
 
         .ee-overlay.active .ee-message {
@@ -1122,8 +1399,6 @@
 
         @media (max-width: 600px) {
             .ee-message { font-size: 1.05rem; }
-
-            .ee-heart-field { width: 200px; height: 200px; }
         }
     </style>
 
@@ -1175,7 +1450,7 @@
 
         // --- Scroll animations ---
         var animatedElements = document.querySelectorAll('.animate-on-scroll');
-        var staggerContainers = document.querySelectorAll('.research-areas, .pub-list, .edu-list, .contact-grid');
+        var staggerContainers = document.querySelectorAll('.research-areas, .theme-grid, .timeline, .pub-list, .edu-list, .contact-grid');
 
         var observer = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
@@ -1255,7 +1530,7 @@
         function activate() {
             active = true;
             spawnMotes();
-            spawnHeartDots();
+            startScan();
             overlay.classList.add('active');
             riseInterval = setInterval(function() {
                 if (!active) return;
@@ -1271,12 +1546,13 @@
             overlay.removeEventListener('click', dismiss);
             document.removeEventListener('keydown', dismissOnKey);
             clearInterval(riseInterval);
+            if (scanRaf) { cancelAnimationFrame(scanRaf); scanRaf = null; }
             setTimeout(function() {
                 active = false;
                 moteEls.forEach(function(el) { el.remove(); });
                 moteEls = [];
-                var hf = document.getElementById('ee-heart-field');
-                while (hf.firstChild) { hf.removeChild(hf.firstChild); }
+                var cv = document.getElementById('ee-canvas');
+                cv.getContext('2d').clearRect(0, 0, cv.width, cv.height);
             }, 1300);
         }
 
@@ -1344,58 +1620,92 @@
             }
         }
 
-        function spawnHeartDots() {
-            var field = document.getElementById('ee-heart-field');
-            var count = 55;
-            var palette = [
-                'rgba(255, 255, 255, 0.9)',
-                'rgba(230, 220, 245, 0.85)',
-                'rgba(210, 195, 235, 0.8)',
-                'rgba(190, 175, 220, 0.7)'
-            ];
-            for (var i = 0; i < count; i++) {
-                (function(i) {
-                    setTimeout(function() {
-                        if (!active) return;
-                        var t = (i / count) * Math.PI * 2;
-                        // parametric heart curve
-                        var hx = 16 * Math.pow(Math.sin(t), 3);
-                        var hy = -(13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t));
-                        // normalise to field: heart ranges ~[-16,16] x ~[-17,13] -> [0%, 100%]
-                        var px = ((hx + 17) / 34) * 100;
-                        var py = ((hy + 17) / 34) * 100;
-                        // scatter slightly off the curve
-                        px += (-2 + Math.random() * 4);
-                        py += (-2 + Math.random() * 4);
+        // --- Satellite scan: a sweep classifies "terrain" pixels and a heart
+        // emerges from the data, like a classification map rendering. ---
+        var scanRaf = null;
 
-                        var dot = document.createElement('span');
-                        dot.className = 'ee-heart-dot';
-                        var size = (1.2 + Math.random() * 2) + 'px';
-                        dot.style.width = size;
-                        dot.style.height = size;
-                        dot.style.left = px + '%';
-                        dot.style.top = py + '%';
-                        dot.style.background = palette[Math.floor(Math.random() * palette.length)];
-                        dot.style.setProperty('--ee-dot-delay', (Math.random() * 5) + 's');
-                        dot.style.setProperty('--ee-dot-dur', (3 + Math.random() * 4) + 's');
-                        dot.style.setProperty('--ee-dot-peak', (0.15 + Math.random() * 0.3).toFixed(2));
-                        var wx = (-4 + Math.random() * 8) + 'px';
-                        var wy = (-4 + Math.random() * 8) + 'px';
-                        dot.style.setProperty('--ee-wander-x', wx);
-                        dot.style.setProperty('--ee-wander-y', wy);
-                        if (Math.random() < 0.12) {
-                            dot.style.boxShadow = '0 0 ' + (3 + Math.random() * 4) + 'px rgba(210, 195, 235, 0.2)';
-                        }
-                        field.appendChild(dot);
-                        moteEls.push(dot);
-                    }, i * 45);
-                })(i);
+        function startScan() {
+            var cv = document.getElementById('ee-canvas');
+            var ctx = cv.getContext('2d');
+            var S = 480;            // internal resolution
+            var CELL = 8;           // classification cell size
+            var N = S / CELL;       // cells per side
+            cv.width = S;
+            cv.height = S;
+
+            // Implicit heart: (x² + y² - 1)³ − x²·y³ ≤ 0, y pointing up.
+            function inHeart(nx, ny) {
+                var x = nx * 2.9, y = ny * 2.9 + 0.2;
+                var a = x * x + y * y - 1;
+                return a * a * a - x * x * y * y * y <= 0;
             }
+
+            // Pre-classify every cell once.
+            var cells = [];
+            for (var r = 0; r < N; r++) {
+                for (var c = 0; c < N; c++) {
+                    var px = c * CELL + CELL / 2;
+                    var py = r * CELL + CELL / 2;
+                    var nx = (px / S) * 2 - 1;          // -1..1
+                    var ny = 1 - (py / S) * 2;          // -1..1, up positive
+                    var inside = inHeart(nx, ny);
+                    if (!inside && Math.random() > 0.07) continue;  // sparse terrain outside
+                    cells.push({
+                        x: c * CELL, y: r * CELL,
+                        inside: inside,
+                        jitter: Math.random() * 90,                  // reveal lag after sweep
+                        peak: inside ? 0.45 + Math.random() * 0.5 : 0.05 + Math.random() * 0.12,
+                        phase: Math.random() * Math.PI * 2,
+                        hue: inside
+                            ? [255, 110 + (Math.random() * 50 | 0), 130 + (Math.random() * 40 | 0)]
+                            : [120 + (Math.random() * 40 | 0), 200, 140 + (Math.random() * 30 | 0)]
+                    });
+                }
+            }
+
+            var SCAN_MS = 2600;
+            var start = null;
+
+            function frame(ts) {
+                if (!start) start = ts;
+                var t = ts - start;
+                var scanY = Math.min(1, t / SCAN_MS) * (S + 100) - 50;
+
+                ctx.clearRect(0, 0, S, S);
+
+                // Classified cells appear once the sweep has passed them.
+                for (var i = 0; i < cells.length; i++) {
+                    var cl = cells[i];
+                    var passed = scanY - (cl.y + cl.jitter);
+                    if (passed <= 0) continue;
+                    var reveal = Math.min(1, passed / 110);
+                    var breathe = 0.78 + 0.22 * Math.sin(t / 700 + cl.phase);
+                    var alpha = cl.peak * reveal * breathe;
+                    ctx.fillStyle = 'rgba(' + cl.hue[0] + ',' + cl.hue[1] + ',' + cl.hue[2] + ',' + alpha.toFixed(3) + ')';
+                    ctx.fillRect(cl.x + 1, cl.y + 1, CELL - 2, CELL - 2);
+                }
+
+                // The sweep itself: a bright line with a soft leading haze.
+                if (t < SCAN_MS + 600) {
+                    var lineAlpha = t > SCAN_MS ? Math.max(0, 1 - (t - SCAN_MS) / 600) : 1;
+                    var grad = ctx.createLinearGradient(0, scanY - 70, 0, scanY);
+                    grad.addColorStop(0, 'rgba(220, 235, 255, 0)');
+                    grad.addColorStop(1, 'rgba(220, 235, 255, ' + (0.10 * lineAlpha).toFixed(3) + ')');
+                    ctx.fillStyle = grad;
+                    ctx.fillRect(0, scanY - 70, S, 70);
+                    ctx.fillStyle = 'rgba(235, 245, 255, ' + (0.85 * lineAlpha).toFixed(3) + ')';
+                    ctx.fillRect(0, scanY - 1, S, 2);
+                }
+
+                if (active) scanRaf = requestAnimationFrame(frame);
+            }
+
+            scanRaf = requestAnimationFrame(frame);
         }
 
         // Console message
         console.log(
-            '%c"The spaces between my fingers are right where yours belong."',
+            '%c"510 million km² of Earth under constant satellite observation — and the most remarkable thing ever detected is still you."',
             'font-size: 13px; color: rgba(200, 190, 230, 0.8); font-style: italic; padding: 8px 0;'
         );
     })();

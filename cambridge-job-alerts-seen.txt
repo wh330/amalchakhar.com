@@ -2,3 +2,5 @@
 # Format: employer | title | reference
 # Roles listed here have already been reported to Amal and should not be re-reported.
 # Last checked: 2026-06-15
+University of Cambridge | Research Assistant/Research Associate (Fixed Term) TESSERA EO | NR48855
+British Antarctic Survey | GIS and Mapping Specialist | Vacancy-794

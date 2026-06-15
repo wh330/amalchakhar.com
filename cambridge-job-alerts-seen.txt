@@ -1,4 +1,0 @@
-# Cambridge job alert — seen roles
-# Format: employer | title | reference
-# Roles listed here have already been reported to Amal and should not be re-reported.
-# Last checked: 2026-06-15
